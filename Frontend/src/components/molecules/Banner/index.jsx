@@ -1,19 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import bannerImg from "../../../assets/images/bannerImg.png";
-import { ButtonThree } from "../../atoms";
+// import bannerImg from "../../../assets/images/bannerImg.png";
+// import { ButtonThree } from "../../atoms";
 import "../../../shared/Shared.css";
+import AttendanceForm from "./AttendanceForm";
+import DigitalClock from "./DigitalClock";
+import Timer from "./Timer";
+import "./banner.css"
 
 const Banner = () => {
   return (
-    <div className="parent flex min-h-[100vh] flex-col-reverse items-center justify-between pt-14 dark:bg-boxdark lg:flex-row ">
+    <div className="parent flex min-h-[100vh] flex-col-reverse items-center justify-between pt-14 dark:bg-boxdark lg:flex-row xl:ml-30">
       <motion.div
         initial={{ x: "-100vw" }}
         animate={{ x: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="mb-0 translate-y-[-30%] text-center text-3xl font-semibold text-primary sm:translate-y-[-0%] md:text-left">
+        {/* <h1 className="mb-0 translate-y-[-30%] text-center text-3xl font-semibold text-primary sm:translate-y-[-0%] md:text-left">
           Visitors Elogbook System
           <br />
           Department of Information and Communications Technology
@@ -28,17 +32,22 @@ const Banner = () => {
               <span>Login</span>
             </ButtonThree>
           </Link>
+        </div> */}
+        <div className="clock-container mx-auto">
+          <DigitalClock />
+          <Timer />
         </div>
       </motion.div>
       <motion.div
-        className="w-full md:w-1/3"
+        className="w-full md:w-1/2"
         initial={{ x: "100vw" }}
         animate={{ x: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="order-1  sm:pt-0 md:pt-0 lg:order-3 lg:pt-0">
+        {/* <div className="order-1  sm:pt-0 md:pt-0 lg:order-3 lg:pt-0">
           <img src={bannerImg} title="Banner SiPeKa" alt="Banner SiPeKa" />
-        </div>
+        </div> */}
+        <AttendanceForm />
       </motion.div>
     </div>
   );
