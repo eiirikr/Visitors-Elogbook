@@ -104,12 +104,13 @@ const AttendanceForm = () => {
           <thead className="bg-blue-100">
             <tr>
               <th className="border border-gray-300 p-3 text-sm text-gray-700">#</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Name</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Email</th>
+              <th className="border border-gray-300 p-3 text-sm text-gray-700">Date</th>
+              <th className="border border-gray-300 p-3 text-sm text-gray-700">Full Name</th>
+              <th className="border border-gray-300 p-3 text-sm text-gray-700">Company</th>
               <th className="border border-gray-300 p-3 text-sm text-gray-700">Phone</th>
               <th className="border border-gray-300 p-3 text-sm text-gray-700">Purpose</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Log In</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Log Out</th>
+              <th className="border border-gray-300 p-3 text-sm text-gray-700">Time In</th>
+              <th className="border border-gray-300 p-3 text-sm text-gray-700">Time Out</th>
               <th className="border border-gray-300 p-3 text-sm text-gray-700">Action</th>
             </tr>
           </thead>
