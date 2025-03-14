@@ -11,7 +11,7 @@ import "./banner.css"
 
 const Banner = () => {
   return (
-    <div className="parent flex min-h-[100vh] flex-col-reverse items-center justify-between pt-14 dark:bg-boxdark lg:flex-row xl:ml-30">
+    <div className="parent flex min-h-[100vh] flex-col items-center justify-between pt-14 dark:bg-boxdark lg:flex-row xl:ml-30">
       <motion.div
         initial={{ x: "-100vw" }}
         animate={{ x: 0 }}

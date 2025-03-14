@@ -161,21 +161,21 @@ const Contact = () => {
                                 <h3 className="text-xl dark:text-white">Social</h3>
                                 <div className="bg-black dark:bg-white w-10 h-[2px] mx-4"></div>
                                 <a
-                                    href="/"
+                                    href="https://dict.gov.ph/"
                                     target="blank"
                                     className="text-3xl text-primary hover:text-accent hover:-translate-y-1.5 shadow-lg mx-1 duration-300"
                                 >
                                     <FaGlobe ></FaGlobe >
                                 </a>
                                 <a
-                                    href="/"
+                                    href="https://www.facebook.com/DICTIsabela"
                                     target="blank"
                                     className="text-3xl text-primary hover:text-accent hover:-translate-y-1.5 shadow-lg mx-1 duration-300"
                                 >
                                     <FaFacebook ></FaFacebook >
                                 </a>
                                 <a
-                                    href="/"
+                                    href="https://www.youtube.com/@dictph"
                                     target="blank"
                                     className="text-3xl text-primary hover:text-accent hover:-translate-y-1.5 shadow-lg mx-1 duration-300"
                                 >
