@@ -4,7 +4,7 @@ import DataPegawai from './DataPegawaiModel.js';
 
 const {DataTypes} = Sequelize;
 
-const DataJabatan = db.define('data_jabatan',{
+const DataJabatan = db.define('db_vms',{
         id_jabatan: {
             type: DataTypes.STRING,
             defaultValue: DataTypes.UUIDV4,

@@ -1,1 +1,1 @@
-FRONTED => Aplikasi Penggajian Karyawan Berbasis Web (MERN)
+FRONTEND => Visitors Elogbook System (MERN)

@@ -295,12 +295,12 @@ export const getDataJabatan = async () => {
   let resultDataJabatan = [];
   try {
     // get data jabatan :
-    const data_jabatan = await DataJabatan.findAll({
+    const db_vms = await DataJabatan.findAll({
       attributes: ["nama_jabatan", "gaji_pokok", "tj_transport", "uang_makan"],
       distinct: true,
     });
 
-    resultDataJabatan = data_jabatan.map((jabatan) => {
+    resultDataJabatan = db_vms.map((jabatan) => {
       const nama_jabatan = jabatan.nama_jabatan;
       const gaji_pokok = jabatan.gaji_pokok;
       const tj_transport = jabatan.tj_transport;

@@ -1,8 +1,8 @@
 ### Get All Data Jabatan
-GET  http://localhost:5000/data_jabatan
+GET  http://localhost:5000/db_vms
 
 ### Create Data Jabatan
-POST  http://localhost:5000/data_jabatan
+POST  http://localhost:5000/db_vms
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 }
 
 ### UPDATE Data Jabatan
-PATCH   http://localhost:5000/data_jabatan/1
+PATCH   http://localhost:5000/db_vms/1
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 }
 
 ### DELETE Data Jabatan
-DELETE    http://localhost:5000/data_jabatan/2
+DELETE    http://localhost:5000/db_vms/2

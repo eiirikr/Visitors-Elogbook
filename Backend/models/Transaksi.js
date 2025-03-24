@@ -20,9 +20,9 @@ async function getDataPegawai() {
 
         const data_nama_pegawai = resultDataPegawai.map(pegawai => pegawai.nama_pegawai);
         const data_nik = resultDataPegawai.map(pegawai => pegawai.nik);
-        const data_jabatan = resultDataPegawai.map(pegawai => pegawai.jabatan);
+        const db_vms = resultDataPegawai.map(pegawai => pegawai.jabatan);
 
-        return { data_nama_pegawai, data_nik, data_jabatan };
+        return { data_nama_pegawai, data_nik, db_vms };
     } catch (error) {
         console.log(error);
     }

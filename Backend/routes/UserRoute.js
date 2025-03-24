@@ -79,11 +79,11 @@ router.patch('/data_pegawai/:id', verifyUser, adminOnly, updateDataPegawai);
 router.delete('/data_pegawai/:id', verifyUser, adminOnly, deleteDataPegawai);
 router.patch('/data_pegawai/:id/change_password', verifyUser, adminOnly, changePassword);
 // Data Jabatan
-router.get('/data_jabatan', verifyUser, adminOnly, getDataJabatan);
-router.get('/data_jabatan/:id', verifyUser, adminOnly, getDataJabatanByID);
-router.post('/data_jabatan', verifyUser, adminOnly, createDataJabatan);
-router.patch('/data_jabatan/:id', verifyUser, adminOnly, updateDataJabatan);
-router.delete('/data_jabatan/:id', verifyUser, adminOnly, deleteDataJabatan);
+router.get('/db_vms', verifyUser, adminOnly, getDataJabatan);
+router.get('/db_vms/:id', verifyUser, adminOnly, getDataJabatanByID);
+router.post('/db_vms', verifyUser, adminOnly, createDataJabatan);
+router.patch('/db_vms/:id', verifyUser, adminOnly, updateDataJabatan);
+router.delete('/db_vms/:id', verifyUser, adminOnly, deleteDataJabatan);
 
 /* ==== Transaksi  ==== */
 // Data Kehadiran
