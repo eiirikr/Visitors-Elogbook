@@ -11,6 +11,7 @@ const initialState = {
     email: "",
     phone: "",
     purpose: "",
+    company: "", // Added company field
   },
   errors: {
     firstName: "",
@@ -18,6 +19,7 @@ const initialState = {
     email: "",
     phone: "",
     purpose: "",
+    company: "", // Added company error
   },
 };
 
@@ -26,7 +28,12 @@ const reducer = (state, action) => {
     case "SHOW_MODAL":
       return { ...state, showModal: true };
     case "HIDE_MODAL":
-      return { ...state, showModal: false, formData: initialState.formData, errors: initialState.errors };
+      return {
+        ...state,
+        showModal: false,
+        formData: initialState.formData,
+        errors: initialState.errors,
+      };
     case "UPDATE_FORM":
       return { ...state, formData: { ...state.formData, ...action.payload } };
     case "ADD_VISITOR":
@@ -38,6 +45,7 @@ const reducer = (state, action) => {
             ...state.formData,
             logIn: new Date().toLocaleTimeString(),
             logOut: "",
+            date: new Date().toLocaleDateString(), // Add the current date
           },
         ],
         showModal: false,
@@ -66,6 +74,7 @@ const validateForm = (formData) => {
   if (!formData.email) errors.email = "Email is required";
   if (!formData.phone) errors.phone = "Phone number is required";
   if (!formData.purpose) errors.purpose = "Purpose is required";
+  if (!formData.company) errors.company = "Company name is required"; // Validate company
 
   return errors;
 };
@@ -89,51 +98,92 @@ const AttendanceForm = () => {
   };
 
   return (
-    <div className="container mx-auto mt-6 p-6 bg-white rounded-lg shadow-lg max-w-4xl">
-      <h2 className="text-center mb-6 text-2xl font-semibold text-gray-800">Tracking and Integrating Management of Visitor Logs (TIMELOG)</h2>
+    <div className="container mx-auto mt-6 max-w-4xl rounded-lg bg-white p-6 shadow-lg">
+      <h2 className="text-gray-800 mb-6 text-center text-2xl font-semibold">
+        Tracking and Integrating Management of Visitor Logs (TIMELOG)
+      </h2>
 
       <ButtonThree
-        className="w-full sm:w-auto bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200"
+        className="bg-blue-600 hover:bg-blue-700 w-full rounded-lg px-6 py-2 font-semibold text-white transition duration-200 sm:w-auto"
         onClick={() => dispatch({ type: "SHOW_MODAL" })}
       >
         Log In
       </ButtonThree>
 
-      <div className="overflow-x-auto mt-6">
-        <table className="min-w-full text-center table-auto border-separate border-spacing-0 border border-gray-300">
+      <div className="mt-6 overflow-x-auto">
+        <table className="border-gray-300 min-w-full table-auto border-separate border-spacing-0 border text-center">
           <thead className="bg-blue-100">
             <tr>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">#</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Date</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Full Name</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Company</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Phone</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Purpose</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Time In</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Time Out</th>
-              <th className="border border-gray-300 p-3 text-sm text-gray-700">Action</th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                #
+              </th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                Date
+              </th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                Full Name
+              </th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                Company
+              </th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                Phone
+              </th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                Purpose
+              </th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                Time In
+              </th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                Time Out
+              </th>
+              <th className="border-gray-300 text-gray-700 border p-3 text-sm">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>
             {state.visitors.length === 0 ? (
               <tr>
-                <td colSpan="8" className="py-4 text-gray-500">No visitors yet</td>
+                <td colSpan="9" className="text-gray-500 py-4">
+                  No visitors yet
+                </td>
               </tr>
             ) : (
               state.visitors.map((visitor, index) => (
                 <tr key={index}>
-                  <td className="border border-gray-300 p-3">{index + 1}</td>
-                  <td className="border border-gray-300 p-3">{visitor.firstName} {visitor.lastName}</td>
-                  <td className="border border-gray-300 p-3">{visitor.email}</td>
-                  <td className="border border-gray-300 p-3">{visitor.phone}</td>
-                  <td className="border border-gray-300 p-3">{visitor.purpose}</td>
-                  <td className="border border-gray-300 p-3">{visitor.logIn}</td>
-                  <td className="border border-gray-300 p-3">{visitor.logOut || "—"}</td>
-                  <td className="border border-gray-300 p-3">
+                  <td className="border-gray-300 border p-3">{index + 1}</td>
+                  <td className="border-gray-300 border p-3">
+                    {visitor.date}
+                  </td>{" "}
+                  {/* Date column */}
+                  <td className="border-gray-300 border p-3">
+                    {visitor.firstName} {visitor.lastName}
+                  </td>
+                  <td className="border-gray-300 border p-3">
+                    {visitor.company}
+                  </td>{" "}
+                  {/* Company column */}
+                  <td className="border-gray-300 border p-3">
+                    {visitor.phone}
+                  </td>
+                  <td className="border-gray-300 border p-3">
+                    {visitor.purpose}
+                  </td>
+                  <td className="border-gray-300 border p-3">
+                    {visitor.logIn}
+                  </td>
+                  <td className="border-gray-300 border p-3">
+                    {visitor.logOut || "—"}
+                  </td>
+                  <td className="border-gray-300 border p-3">
                     {!visitor.logOut && (
                       <ButtonThree
-                        className="bg-red-600 text-white py-1 px-3 rounded-lg hover:bg-red-700"
-                        onClick={() => dispatch({ type: "LOG_OUT_VISITOR", payload: index })}
+                        className="bg-red-600 hover:bg-red-700 rounded-lg px-3 py-1 text-white"
+                        onClick={() =>
+                          dispatch({ type: "LOG_OUT_VISITOR", payload: index })
+                        }
                       >
                         Log Out
                       </ButtonThree>
@@ -147,10 +197,10 @@ const AttendanceForm = () => {
       </div>
 
       {state.showModal && (
-        <div className="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="modal-dialog bg-white bg-opacity-20 backdrop-blur-md p-6 rounded-lg shadow-lg max-w-full sm:max-w-lg w-full sm:w-1/2">
-            <div className="modal-header flex justify-between items-center">
-              <h5 className="text-xl font-semibold text-gray-800">Log In</h5>
+        <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="modal-dialog w-full max-w-full rounded-lg bg-white p-6 shadow-lg sm:w-1/2 sm:max-w-lg">
+            <div className="modal-header flex items-center justify-between">
+              <h5 className="text-gray-800 text-xl font-semibold">Log In</h5>
               <ButtonThree
                 className="text-gray-500 hover:text-gray-800"
                 onClick={() => dispatch({ type: "HIDE_MODAL" })}
@@ -163,16 +213,27 @@ const AttendanceForm = () => {
                 {Object.keys(initialState.formData).map((key) => (
                   <div className="mb-4" key={key}>
                     <input
-                      type={key === "email" ? "email" : key === "phone" ? "tel" : "text"}
-                      className="form-input w-full p-3 border border-gray-300 rounded-lg bg-transparent text-white placeholder-gray-200"
+                      type={
+                        key === "email"
+                          ? "email"
+                          : key === "phone"
+                          ? "tel"
+                          : "text"
+                      }
+                      className="form-input border-gray-300 placeholder-gray-200 w-full rounded-lg border bg-transparent p-3 text-black"
                       placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
                       value={state.formData[key]}
                       onChange={(e) =>
-                        dispatch({ type: "UPDATE_FORM", payload: { [key]: e.target.value } })
+                        dispatch({
+                          type: "UPDATE_FORM",
+                          payload: { [key]: e.target.value },
+                        })
                       }
                     />
                     {state.errors[key] && (
-                      <p className="text-sm text-red-500 mt-1">{state.errors[key]}</p>
+                      <p className="text-red-500 mt-1 text-sm">
+                        {state.errors[key]}
+                      </p>
                     )}
                   </div>
                 ))}
@@ -180,8 +241,10 @@ const AttendanceForm = () => {
                 <div className="flex justify-end space-x-2">
                   <ButtonThree
                     className={`${
-                      isSubmitting ? "bg-gray-400" : "bg-green-600 hover:bg-green-700"
-                    } text-white py-2 px-4 rounded-lg`}
+                      isSubmitting
+                        ? "bg-gray-400"
+                        : "bg-green-600 hover:bg-green-700"
+                    } rounded-lg px-4 py-2 text-white`}
                     type="submit"
                     disabled={isSubmitting}
                   >
@@ -193,7 +256,6 @@ const AttendanceForm = () => {
           </div>
         </div>
       )}
-
     </div>
   );
 };
