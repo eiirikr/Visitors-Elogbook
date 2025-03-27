@@ -26,7 +26,7 @@ const About = () => {
                                 transition: { duration: 1, type: "spring" },
                             }}
                         >
-                            <h3 className="text-neutral text-center dark:text-white">Visitors Elogbook System</h3>
+                            <h3 className="text-neutral text-center dark:text-white">Tracking and Integrating Management of Visitor Logs (TIMELOG)</h3>
                             <h1 className="text-4xl font-semibold drop-shadow-md text-center text-accent dark:text-white">
                                 About <span className="text-primary">Us</span>
                             </h1>
@@ -58,7 +58,7 @@ const About = () => {
                                 }}
                             >
                                 <p className="font-medium text-center translate-y-[-60%] sm:translate-y-[-0%] sm:mb-2 md:text-left dark:text-white">
-                                    Visitors Elogbook System is a system designed to efficiently and accurately manage the visitor logbook process within an organization. This system automates several tasks related to visitor management, such as registering visitor details, tracking entry and exit times, and maintaining security protocols. By streamlining the process, the system ensures that all visitors are properly identified and recorded, improving both safety and operational efficiency.
+                                    Tracking and Integrating Management of Visitor Logs (TIMELOG) is a system designed to efficiently and accurately manage the visitor logbook process within an organization. This system automates several tasks related to visitor management, such as registering visitor details, tracking entry and exit times, and maintaining security protocols. By streamlining the process, the system ensures that all visitors are properly identified and recorded, improving both safety and operational efficiency.
                                 </p>
                                 <br />
                                 <p className="font-medium text-center translate-y-[-50%] sm:translate-y-[-0%] sm:mb-2 md:text-left dark:text-white">

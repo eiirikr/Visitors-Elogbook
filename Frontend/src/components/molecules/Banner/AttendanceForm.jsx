@@ -90,7 +90,7 @@ const AttendanceForm = () => {
 
   return (
     <div className="container mx-auto mt-6 p-6 bg-white rounded-lg shadow-lg max-w-4xl">
-      <h2 className="text-center mb-6 text-2xl font-semibold text-gray-800">Visitors Elogbook System</h2>
+      <h2 className="text-center mb-6 text-2xl font-semibold text-gray-800">Tracking and Integrating Management of Visitor Logs (TIMELOG)</h2>
 
       <ButtonThree
         className="w-full sm:w-auto bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200"

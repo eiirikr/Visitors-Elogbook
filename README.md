@@ -1,6 +1,6 @@
-<H1 align ="center" >Visitors Elogbook System</h1>
+<H1 align ="center" >Tracking and Integrating Management of Visitor Logs (TIMELOG)</h1>
 <h5  align ="center"> 
-Visitors Elogbook System is a system designed to efficiently and accurately manage the visitor logbook process within an organization.<br/> This system automates several tasks related to visitor management, such as registering visitor details, tracking entry and exit times, and maintaining security protocols. By streamlining the process, the system ensures that all visitors are properly identified and recorded, improving both safety and operational efficiency.</h5>
+Tracking and Integrating Management of Visitor Logs (TIMELOG) is a system designed to efficiently and accurately manage the visitor logbook process within an organization.<br/> This system automates several tasks related to visitor management, such as registering visitor details, tracking entry and exit times, and maintaining security protocols. By streamlining the process, the system ensures that all visitors are properly identified and recorded, improving both safety and operational efficiency.</h5>
 <br/>
 
   * [Configuration and Setup](#configuration-and-setup)

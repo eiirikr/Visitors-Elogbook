@@ -1,1 +1,1 @@
-FRONTEND => Visitors Elogbook System (MERN)
+FRONTEND => Tracking and Integrating Management of Visitor Logs (TIMELOG) (MERN)

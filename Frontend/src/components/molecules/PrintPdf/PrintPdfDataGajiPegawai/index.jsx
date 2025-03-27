@@ -27,7 +27,7 @@ const PrintPdfDataGajiPegawai = () => {
 
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
-        documentTitle: "Visitors Elogbook System | DICT",
+        documentTitle: "Tracking and Integrating Management of Visitor Logs (TIMELOG) | DICT",
     });
 
     useEffect(() => {
