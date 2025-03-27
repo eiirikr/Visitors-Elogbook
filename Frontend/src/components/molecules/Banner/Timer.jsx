@@ -6,7 +6,7 @@ export default function DigitalClock() {
     minutes: "00",
     seconds: "00",
     format: "AM",
-    day: 0,
+    day: 0, // Default to Sunday
     date: "",
   });
 
@@ -19,42 +19,45 @@ export default function DigitalClock() {
       let seconds = date.getSeconds();
       let timeFormat = hours >= 12 ? "PM" : "AM";
 
+      // Convert to 12-hour format
       hours = hours === 0 ? 12 : hours > 12 ? hours - 12 : hours;
       const formattedDate = date.toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",
       });
+
       const formattedTime = {
         hours: hours < 10 ? "0" + hours : hours.toString(),
         minutes: minutes < 10 ? "0" + minutes : minutes.toString(),
         seconds: seconds < 10 ? "0" + seconds : seconds.toString(),
         format: timeFormat,
-        day,
+        day, // Current day (0-6)
         date: formattedDate,
       };
-      setTime(formattedTime);
+
+      setTime(formattedTime); // Update the time state
     };
 
     const interval = setInterval(updateClock, 1000);
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
   return (
     <section className="timer">
-      <div className="display shadow-lg p-4 text-center">
+      <div className="display p-4 text-center shadow-lg">
         {/* Weekdays */}
-        <div className="weekdays flex justify-center mb-3">
-          {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((day, index) => (
-            <span
-              key={index}
-              className={`${
-                index === time.day ? "font-bold text-blue-500" : "text-gray-400"
-              }`}
-            >
-              {day}
-            </span>
-          ))}
+        <div className="weekdays">
+          {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map(
+            (day, index) => (
+              <span
+                key={index}
+                className={`${index === time.day ? "highlighted" : "default"}`}
+              >
+                {day}
+              </span>
+            )
+          )}
         </div>
 
         {/* Time Display */}
@@ -66,11 +69,11 @@ export default function DigitalClock() {
             <span className="dot">:</span>
             {time.seconds}
           </div>
-          <div className="format text-xl text-uppercase">{time.format}</div>
+          <div className="format text-uppercase text-xl">{time.format}</div>
         </div>
 
         {/* Date Display */}
-        <div className="date-display text-center font-bold text-red-600 text-3xl mt-4">
+        <div className="date-display text-red-600 mt-4 text-center text-3xl font-bold">
           {time.date}
         </div>
       </div>

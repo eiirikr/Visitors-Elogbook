@@ -1,153 +1,169 @@
 :root {
-    --white-color: #fff;
-    --black-color: #18191a;
-    --red-color: #e74c3c;
+  --white-color: #fff;
+  --black-color: #18191a;
+  --red-color: #e74c3c;
+}
+
+/* Digital Clock Style */
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-top: 10%;
+}
+
+.clock-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  padding: 30px;
+}
+
+.clock-container .clock {
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: var(--white-color);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 25px 45px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.clock label {
+  position: absolute;
+  inset: 8px;
+  text-align: center;
+  transform: rotate(calc(var(--i) * (360deg / 12)));
+}
+
+.clock label span {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black-color);
+  transform: rotate(calc(var(--i) * (-360deg / 12)));
+}
+
+.clock-container .indicator {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: 100;
+  background: var(--black-color);
+  border: 4px solid var(--red-color);
+}
+
+.indicator .hand {
+  position: absolute;
+  height: 100px;
+  width: 4px;
+  bottom: 0;
+  border-radius: 25px;
+  transform-origin: bottom;
+  background: var(--red-color);
+}
+
+.hand.minute {
+  height: 100px;
+  width: 5px;
+  background: var(--black-color);
+}
+
+.hand.hour {
+  height: 70px;
+  width: 8px;
+  background: var(--black-color);
+}
+
+/* Timer Style */
+.timer {
+  max-width: 620px;
+  padding: 10%;
+  border-radius: 8px;
+}
+
+.timer .display {
+  padding: 40px 10px 10px;
+  border-radius: 6px;
+  background-color: #dddddd;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08) inset, 0 1px 1px #fafafa;
+  position: relative;
+}
+
+.timer .display .weekdays {
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  text-align: center;
+  font-family: "Text Me One", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.weekdays span {
+  padding: 0 10px;
+  font-weight: 600;
+  font-family: "Text Me One", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.weekdays span.default {
+  color: #9ca3af; /* Gray color for inactive weekdays */
+}
+
+/* Highlight the current weekday */
+.weekdays span.highlighted {
+  color: blue;
+  font-weight: bold;
+}
+
+.display .timeDisplay {
+  display: flex;
+  justify-content: center;
+}
+
+.timeDisplay .time {
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 3px;
+  font-family: "Digital-7 Mono", sans-serif;
+  margin-top: 10px;
+}
+
+.timeDisplay .format {
+  font-size: 30px;
+  margin-top: 50px;
+  margin-left: 10px;
+  font-family: "Text Me One", sans-serif;
+}
+
+.time .dot {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  25% {
+    opacity: 0;
   }
-  
-  /* Digital Clock Style */
-  .clock-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin-top: 10%;
-  }
-  
-  .clock-container > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 250px;
-    padding: 30px;
-  }
-  
-  .clock-container .clock {
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    background: var(--white-color);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 25px 45px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
-  
-  .clock label {
-    position: absolute;
-    inset: 8px;
-    text-align: center;
-    transform: rotate(calc(var(--i) * (360deg / 12)));
-  }
-  
-  .clock label span {
-    display: inline-block;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--black-color);
-    transform: rotate(calc(var(--i) * (-360deg / 12)));
-  }
-  
-  .clock-container .indicator {
-    position: absolute;
-    height: 10px;
-    width: 10px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .indicator::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    z-index: 100;
-    background: var(--black-color);
-    border: 4px solid var(--red-color);
-  }
-  
-  .indicator .hand {
-    position: absolute;
-    height: 100px;
-    width: 4px;
-    bottom: 0;
-    border-radius: 25px;
-    transform-origin: bottom;
-    background: var(--red-color);
-  }
-  
-  .hand.minute {
-    height: 100px;
-    width: 5px;
-    background: var(--black-color);
-  }
-  
-  .hand.hour {
-    height: 70px;
-    width: 8px;
-    background: var(--black-color);
-  }
-  
-  /* Timer Style */
-  .timer {
-    max-width: 620px;
-    padding: 10%;
-    border-radius: 8px;
-  }
-  
-  .timer .display {
-    padding: 40px 10px 10px;
-    border-radius: 6px;
-    background-color: #dddddd;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08) inset, 0 1px 1px #fafafa;
-    position: relative;
-  }
-  
-  .timer .display .weekdays {
-    font-size: 18px;
-    font-weight: 600;
-    width: 100%;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    text-align: center;
-    font-family: "Text Me One", sans-serif;
-  }
-  
-  .weekdays span {
-    padding: 0 10px;
-  }
-  
-  .display .timeDisplay {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .timeDisplay .time {
-    font-size: 80px;
-    display: flex;
-    justify-content: center;
-    letter-spacing: 3px;
-    font-family: "Digital-7 Mono", sans-serif;
-    margin-top: 10px;
-  }
-  
-  .timeDisplay .format {
-    font-size: 30px;
-    margin-top: 50px;
-    margin-left: 10px;
-    font-family: "Text Me One", sans-serif;
-  }
-  
-  .time .dot {
-    animation: blinker 1s linear infinite;
-  }
-  
-  @keyframes blinker {
-    25% {
-      opacity: 0;
-    }
-  }
-  
+}
