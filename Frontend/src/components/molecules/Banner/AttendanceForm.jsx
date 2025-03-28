@@ -100,7 +100,7 @@ const AttendanceForm = () => {
   return (
     <div className="container mx-auto mt-6 max-w-4xl rounded-lg bg-white p-6 shadow-lg">
       <h2 className="text-gray-800 mb-6 text-center text-2xl font-semibold">
-        Tracking and Integrating Management of Visitor Logs (TIMELOG)
+        Tracking and Integrating Management of Visitor Logs
       </h2>
 
       <ButtonThree

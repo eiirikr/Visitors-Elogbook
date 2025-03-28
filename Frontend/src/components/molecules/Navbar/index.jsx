@@ -56,15 +56,18 @@ export default function Navbar() {
         <div
             className='visible  bg-white dark:bg-black z-50'>
             <div className="w-full flex items-center justify-between px-3 md:px-24 py-3">
-                <div>
+                <div className="flex items-center justify-between">
                     <Link to="/">
                         <img
                             src={LogoDICT}
-                            alt="Logo SiPeKa"
+                            alt="DICT Logo"
                             className="h-16"
-                            title="Logo SiPeKa"
+                            title="DICT Logo"
                         />
                     </Link>
+                    <div className="font-bold m-4.5 color text-blue-500">
+                       <h1>TIMELOG</h1>
+                    </div>
                 </div>
                 <div>
                     <ul className="lg:flex items-center hidden ">

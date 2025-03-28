@@ -144,17 +144,17 @@ const Contact = () => {
                             </div>
                             <div className="flex items-center my-6">
                                 <FaPhoneAlt className="text-2xl mr-8 text-primary duration-300"></FaPhoneAlt>
-                                <h3 className="font-medium dark:text-white">09566343793</h3>
+                                <h3 className="font-medium dark:text-white">(078) 307 9792</h3>
                             </div>
                             <div className="flex items-center my-6">
                                 <MdEmail className="text-3xl mr-8 text-primary duration-300"></MdEmail>
-                                <h3 className="font-medium dark:text-white">dict@gmail.com</h3>
+                                <h3 className="font-medium dark:text-white"> information@dict.gov.ph </h3>
                             </div>
                             <div className="flex items-center my-6">
                                 <FaLocationArrow className="text-2xl mr-8 text-primary duration-300"></FaLocationArrow>
 
                                 <h3 className="font-medium dark:text-white">
-                                    #30 Pilar St., Cauayan City, Isabela
+                                    #30 Pilar Street, District 3, Cauayan, Philippines
                                 </h3>
                             </div>
                             <div className="mt-8 flex items-center">

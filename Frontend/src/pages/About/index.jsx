@@ -26,7 +26,7 @@ const About = () => {
                                 transition: { duration: 1, type: "spring" },
                             }}
                         >
-                            <h3 className="text-neutral text-center dark:text-white">Tracking and Integrating Management of Visitor Logs (TIMELOG)</h3>
+                            <h3 className="text-neutral text-center dark:text-white">Tracking and Integrating Management of Visitor Logs</h3>
                             <h1 className="text-4xl font-semibold drop-shadow-md text-center text-accent dark:text-white">
                                 About <span className="text-primary">Us</span>
                             </h1>
@@ -62,7 +62,7 @@ const About = () => {
                                 </p>
                                 <br />
                                 <p className="font-medium text-center translate-y-[-50%] sm:translate-y-[-0%] sm:mb-2 md:text-left dark:text-white">
-                                    In the Visitor's Elogbook System, visitor information such as personal details, purpose of visit, and the person being visited are stored in a centralized database. Each time a visitor arrives, the system captures their entry data, including the time of arrival, the intended duration of their visit, and the areas they will be accessing. This data is then used to generate a complete log of visitor activity, including exit times. The system can also track any special requests, such as escort requirements or access restrictions, ensuring that each visit is properly monitored and secured.
+                                    In the TIMELOG, visitor information such as personal details, purpose of visit, and the person being visited are stored in a centralized database. Each time a visitor arrives, the system captures their entry data, including the time of arrival, the intended duration of their visit, and the areas they will be accessing. This data is then used to generate a complete log of visitor activity, including exit times. The system can also track any special requests, such as escort requirements or access restrictions, ensuring that each visit is properly monitored and secured.
                                 </p>
                             </motion.div>
                         </div>
