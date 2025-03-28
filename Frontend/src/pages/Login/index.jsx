@@ -8,9 +8,9 @@ function Login() {
     <div className="min-h-screen rounded-sm border border-stroke pt-10 shadow-default dark:border-strokedark dark:bg-boxdark">
       <Navbar />
       <div className="flex min-h-screen flex-wrap items-center">
-        <div className="hidden w-full xl:block xl:w-1/2">
-          <div className="px-26 py-18.5 text-center ">
-            <span className="mb-5.5 inline-block ">
+        <div className="w-full xl:w-1/2">
+          <div className="px-26 py-18.5 text-center">
+            <span className="mb-5.5 inline-block">
               <img
                 className="w-80"
                 src={LogoDICT}
