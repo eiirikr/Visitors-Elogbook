@@ -17,22 +17,6 @@ const Banner = () => {
         animate={{ x: 0 }}
         transition={{ duration: 1 }}
       >
-        {/* <h1 className="mb-0 translate-y-[-30%] text-center text-3xl font-semibold text-primary sm:translate-y-[-0%] md:text-left">
-          Tracking and Integrating Management of Visitor Logs (TIMELOG)
-          <br />
-          Department of Information and Communications Technology
-        </h1>
-        <p className="mb-6 max-w-xl translate-y-[-60%] pt-8 text-center font-medium dark:text-white sm:translate-y-[-0%] md:text-left">
-        A company platform to manage visitors processes efficiently and integratively through a digital platform.
-        </p>
-
-        <div className="grid translate-y-[-170%] justify-center sm:flex sm:translate-y-[-0%] sm:justify-start">
-          <Link to="/login" className="sm:py-0">
-            <ButtonThree>
-              <span>Login</span>
-            </ButtonThree>
-          </Link>
-        </div> */}
         <div className="clock-container mx-auto">
           <DigitalClock />
           <Timer />
@@ -44,9 +28,6 @@ const Banner = () => {
         animate={{ x: 0 }}
         transition={{ duration: 1 }}
       >
-        {/* <div className="order-1  sm:pt-0 md:pt-0 lg:order-3 lg:pt-0">
-          <img src={bannerImg} title="Banner SiPeKa" alt="Banner SiPeKa" />
-        </div> */}
         <AttendanceForm />
       </motion.div>
     </div>
